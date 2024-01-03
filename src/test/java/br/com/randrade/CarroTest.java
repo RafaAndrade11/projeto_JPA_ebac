@@ -36,6 +36,7 @@ public class CarroTest {
 		assertNotNull(carro.getId());
 		
 		marca = marcaDAO.excluir(marca);
+		carro = carroDAO.excluir(carro);
 	}
 
 	private Marca criarMarca(String codigo) {

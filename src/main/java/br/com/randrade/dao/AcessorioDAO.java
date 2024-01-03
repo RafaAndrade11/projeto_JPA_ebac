@@ -24,4 +24,22 @@ public class AcessorioDAO implements IAcessorioDAO {
 		return acessorio;
 	}
 
+	@Override
+	public Acessorio excluir(Acessorio acessorio) {
+		EntityManagerFactory entityManagerFactory = 
+                Persistence.createEntityManagerFactory("ProjetoCarros");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        entityManager.getTransaction().begin();
+ 
+        entityManager.createNativeQuery("DROP TABLE IF EXISTS Acessorio CASCADE").executeUpdate();
+               
+        entityManager.getTransaction().commit();
+
+        entityManager.clear();
+        entityManagerFactory.close();
+        
+		return acessorio;
+	}
+
 }

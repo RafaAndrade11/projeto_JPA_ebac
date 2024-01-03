@@ -6,4 +6,6 @@ public interface IAcessorioDAO {
 
 	Acessorio cadastrar(Acessorio acessorio);
 
+	Acessorio excluir(Acessorio acessorio);
+
 }

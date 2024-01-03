@@ -41,6 +41,9 @@ public class AcessorioTest {
 		
 		assertNotNull(acessorio);
 		assertNotNull(acessorio.getId());
+		
+		carro = carroDAO.excluir(carro);
+		acessorio = acessorioDAO.excluir(acessorio);
 	}
 	
 	private Carro criarCarro(String codigo) {

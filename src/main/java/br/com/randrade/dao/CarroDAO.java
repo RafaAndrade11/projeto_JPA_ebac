@@ -24,6 +24,24 @@ public class CarroDAO implements ICarroDAO {
 		return carro;
 	}
 
+	@Override
+	public Carro excluir(Carro carro) {
+		EntityManagerFactory entityManagerFactory = 
+                Persistence.createEntityManagerFactory("ProjetoCarros");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        entityManager.getTransaction().begin();
+       
+        entityManager.createNativeQuery("DROP TABLE IF EXISTS Carro CASCADE").executeUpdate();
+      
+        entityManager.getTransaction().commit();
+
+        entityManager.clear();
+        entityManagerFactory.close();
+        
+		return carro;
+	}
+
 
 
 }

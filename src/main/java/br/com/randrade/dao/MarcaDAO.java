@@ -32,11 +32,8 @@ public class MarcaDAO implements IMarcaDAO {
 
         entityManager.getTransaction().begin();
         
-        entityManager.createNativeQuery("DROP TABLE IF EXISTS Acessorio CASCADE").executeUpdate(); 
-        entityManager.createNativeQuery("DROP TABLE IF EXISTS Carro CASCADE").executeUpdate();
         entityManager.createNativeQuery("DROP TABLE IF EXISTS Marca CASCADE").executeUpdate();
                
-      
         entityManager.getTransaction().commit();
 
         entityManager.clear();
